@@ -9,20 +9,31 @@
     </div>
     <div class="auth-main particles_js">
       <div class="auth_div vivify popIn">
-        <Logo />
+        <div class="auth_brand">
+          <Logo/>
+        </div>
         <div class="card">
           <div class="body">
-            <p class="lead">ثبت نام</p>
-            <form class="form-auth-small m-t-20">
+            <p class="lead">ورود به سامانه</p>
+            <form class="form-auth-small m-t-20" action="index.html">
               <div class="form-group">
-                <input type="email" class="form-control round" placeholder="Your email">
+                <label for="signin-email" class="control-label sr-only">Email</label>
+                <input type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control round" placeholder="Password">
+                <label for="signin-password" class="control-label sr-only">Password</label>
+                <input type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary btn-round btn-block">ثبت نام</button>
+              <div class="form-group clearfix">
+                <label class="fancy-checkbox element-right">
+
+                  <input type="checkbox">
+                  <span>مرا به خاطر بسپار</span>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-round btn-block">ورود</button>
               <div class="bottom">
-                <span>قبلا عضو شده اید ؟ <n-link to="/login">ورود</n-link></span>
+                <span>عضو نیستید ؟ <n-link to="/register">عضویت</n-link></span>
               </div>
             </form>
           </div>
