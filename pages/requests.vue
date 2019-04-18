@@ -1,0 +1,57 @@
+<template>
+  <div class="table-responsive" dir="rtl">
+    <table dir="rtl" class="table table-hover table-custom spacing5 text-right">
+      <thead>
+      <tr>
+        <th style="width: 20px;">#</th>
+        <th>مسوول</th>
+          <th style="width: 50px;">زمان</th>
+        <th style="width: 50px;">وضعیت</th>
+        <th style="width: 110px;">رضایت</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <span>01</span>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
+            <div class="mr-3">
+              <a href="page-invoices-detail.html" title="">غفوری</a>
+              <p class="mb-0">ghafouri@sbu.ac.ir</p>
+            </div>
+          </div>
+        </td>
+        <td>۲۲ آبان</td>
+        <td><span class="badge badge-success ml-0 mr-0">Done</span></td>
+        <td>
+          <button type="button" class="btn btn-sm btn-default " title="Like" data-toggle="tooltip" data-placement="top"><i class="icon-like"></i></button>
+          <button type="button" class="btn btn-sm btn-default" title="Dislike" data-toggle="tooltip" data-placement="top"><i class="icon-dislike"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+
+<script>
+  export default {
+    head () {
+      return {
+        script: [
+          { src: "/bundles/libscripts.bundle.js", body: true},
+          { src: "/bundles/vendorscripts.bundle.js", body: true },
+          { src: "/bundles/mainscripts.bundle.js", body: true }
+        ],
+        link: [
+          { rel: 'stylesheet', href: 'vendor/bootstrap/css/bootstrap.min.css' },
+          { rel: 'stylesheet', href: 'vendor/font-awesome/css/font-awesome.min.css' },
+          { rel: 'stylesheet', href: 'vendor/animate-css/vivify.min.css' }
+        ]
+      }
+    }
+  }
+</script>
