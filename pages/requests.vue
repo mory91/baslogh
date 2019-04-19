@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main-content">
     <div class="input-group p-20 float-right w50p">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button">جست و جو</button>
