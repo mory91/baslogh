@@ -2420,11 +2420,11 @@ html.fullscreen-bg #wrapper {
   background: #22252a;
   position: fixed;
   top: 0px;
-  right: 0;
+  left: 0;
   width: calc(100% - 260px);
   z-index: 8;
   padding: 5px 0;
-  margin: 0 15px 0 20px;
+  margin: 0 20px 0 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1)
 }
 
@@ -2445,7 +2445,6 @@ html.fullscreen-bg #wrapper {
 .navbar-fixed-top .navbar-btn {
   display: none;
   float: left;
-  border-right: 1px solid #fff
 }
 
 .navbar-fixed-top .navbar-btn button {
@@ -6763,7 +6762,8 @@ ul.choose-skin li,
   margin-bottom: 10px
 }
 
-.m-l-15 {
+.m-l-15,
+.navbar-fixed-top .navbar-btn {
   margin-left: 15px
 }
 
@@ -6773,12 +6773,14 @@ ul.choose-skin li,
 }
 
 .m-r-15,
-.navbar-fixed-top .navbar-btn,
 .navbar-nav,
-.feeds_widget li .feeds-left,
 .w_knob .c_know,
 .team-info li .first {
   margin-right: 15px
+}
+
+.feeds_widget li .feeds-left {
+  margin-left: 15px;
 }
 
 .m-b-15,
