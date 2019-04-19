@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SideBar />
     <Nav />
     <nuxt/>
   </div>
@@ -54,8 +55,9 @@ html {
 
 <script>
   import Nav from "../components/Nav";
+  import SideBar from "../components/SideBar";
   export default {
-    components: {Nav},
+    components: {SideBar, Nav},
     head() {
       return {
         script: [
