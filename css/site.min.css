@@ -6664,6 +6664,7 @@ small {
 #left-sidebar {
   margin-top: 0px;
   direction : rtl;
+  text-align: right;
 }
 
 .m-r-0,

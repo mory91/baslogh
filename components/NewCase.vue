@@ -9,7 +9,6 @@
             <input type="text" class="form-control" placeholder="نام و نام خانوادگی فرستنده" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
-
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
@@ -76,7 +75,7 @@
 
 
           </div>
-          <button type="button" class="btn btn-primary btn-round">Submit</button>
+          <button type="button" class="btn btn-primary btn-round">ثبت</button>
 
         </div>
       </div>
