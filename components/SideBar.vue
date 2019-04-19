@@ -1,7 +1,7 @@
 <template>
   <div id="left-sidebar" class="sidebar theme-orange text-right" dir="rtl">
     <div class="navbar-brand">
-      <a href="index.html"><img src="../assets/images/icon.svg" alt="Oculux Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></a>
+      <a href="/"><img src="../assets/images/icon.svg" alt="Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></a>
       <button type="button" class="btn-toggle-offcanvas btn btn-sm float-left"><i class="lnr lnr-menu fa fa-chevron-circle-right"></i></button>
     </div>
     <div class="sidebar-scroll">
@@ -23,6 +23,7 @@
           <li><a href="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></a></li>
           <li><a href="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></a></li>
           <li><a href="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></a></li>
+          <li><a href="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></a></li>
           <li><a href="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></a></li>
         </ul>
       </nav>

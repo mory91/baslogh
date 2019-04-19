@@ -1,8 +1,6 @@
 <template>
   <div id="main-content" dir="rtl">
-    <div class="row clearfix">
-      <NewCase />
-    </div>
+    <NewCase />
   </div>
 </template>
 <script>

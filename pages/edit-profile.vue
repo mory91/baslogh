@@ -1,6 +1,6 @@
 <template>
 <div id="main-content" dir="rtl">
-  <div class="card col-md-10 " style="position: center;text-align: right; margin-left: 40%; background-color: #393d42;">
+  <div class="card col-md-12 " style="position: center;text-align: right; margin-left: 40%; background-color: #393d42;">
     <div class="profile-header d-flex  ">
       <div class="d-flex">
         <div class="mr-3" style="margin-left: 20px">
@@ -31,8 +31,8 @@
     </div>
   </div>
 
-  <div class="row clearfix">
-    <div class="col-md-10">
+  <div >
+    <div class="col-md-12">
       <div class="card">
         <div class="body">
           <div class="input-group mb-3">
