@@ -7927,6 +7927,14 @@ ul.choose-skin li,
   line-height: 30px
 }
 
+.w50p {
+  width: 50%;
+}
+
+.w100p {
+  width: 100%;
+}
+
 .w35 {
   width: 35px;
   height: 35px
