@@ -13,7 +13,8 @@
         <tr>
           <th style="width: 20px;">#</th>
           <th>مسوول</th>
-          <th>شرح</th>
+          <th>کاربر فرستنده</th>
+          <th>کاربر مسئول</th>
           <th style="width: 50px;">زمان</th>
           <th style="width: 50px;">وضعیت</th>
           <th style="width: 110px;">رضایت</th>
@@ -33,7 +34,8 @@
               </div>
             </div>
           </td>
-          <td>شرح کمی از کار ...</td>
+          <td>مرتضی حسینی</td>
+          <td>حسن غفوری</td>
           <td>۲۲ آبان</td>
           <td><span class="badge badge-success ml-0 mr-0">Done</span></td>
           <td>

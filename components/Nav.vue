@@ -47,7 +47,7 @@
                 <button type="button" class="btn btn-default"><i class="icon-magnifier"></i></button>
               </form>
             </li>
-            <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-user"></i></a></li>
+            <li><n-link to="/edit-profile" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-user"></i></n-link></li>
             <li><a href="" class="icon-menu"><i class="icon-power"></i></a></li>
           </ul>
         </div>

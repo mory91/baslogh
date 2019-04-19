@@ -4,7 +4,7 @@
       <div class="row clearfix">
 
         <div class="col-md-6 col-sm-12 text-right hidden-xs">
-          <a href="javascript:void(0);" class="btn btn-sm btn-primary btn-round float-left" title="">جدید</a>
+          <n-link to="/newitem" class="btn btn-sm btn-primary btn-round float-left" title="">جدید</n-link>
         </div>
         <div class="col-md-6 col-sm-12">
           <h2 class="float-right">لیست کار ها</h2>
