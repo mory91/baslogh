@@ -40,6 +40,7 @@
 
 
 
+
           <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card">
@@ -63,6 +64,19 @@
             </div>
           </div>
 
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label style="margin: 10px">
+                <i class="fa fa-cloud-upload"></i>   انتخاب فایل
+                <input type="file" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </label>
+            </div>
+            <input type="text" class="form-control" placeholder="آدرس فایل" aria-label="Username"
+                   aria-describedby="basic-addon1">
+
+
+          </div>
+          <button type="button" class="btn btn-primary btn-round">Submit</button>
 
         </div>
       </div>
@@ -86,7 +100,9 @@
         link: [
           {rel: 'stylesheet', href: 'vendor/bootstrap/css/bootstrap.min.css'},
           {rel: 'stylesheet', href: 'vendor/font-awesome/css/font-awesome.min.css'},
+          {rel: 'stylesheet', href: '/vendor/dropify/css/dropify.min.css'},
           {rel: 'stylesheet', href: 'vendor/animate-css/vivify.min.css'}
+
         ]
       }
     },
