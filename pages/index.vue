@@ -1,7 +1,13 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
+      <sideBar/>
+    </div>
+    <div>
+      <NewCase/>
+    </div>
+    <div>
+
       <h1 class="title">
         Baslogh
       </h1>
@@ -23,11 +29,14 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+
+import sideBar from '~/components/SideBar.vue'
+import NewCase from '~/components/NewCase.vue'
 
 export default {
   components: {
-    AppLogo
+    sideBar,
+    NewCase
   }
 }
 </script>

@@ -20,6 +20,14 @@
               <div class="form-group">
                 <input type="password" class="form-control round" placeholder="Password">
               </div>
+              <div class="form-group">
+                <select class="form-control round" name="cars">
+                  <option value="employee">کارمند</option>
+                  <option value="student">دانشجو</option>
+                  <option value="professor">استاد</option>
+                  <option value="manager">مدیر</option>
+                </select>
+              </div>
               <button type="submit" class="btn btn-primary btn-round btn-block">ثبت نام</button>
               <div class="bottom">
                 <span>قبلا عضو شده اید ؟ <n-link to="/login">ورود</n-link></span>
