@@ -17,7 +17,7 @@
       <nav id="left-sidebar-nav" class="sidebar-nav">
         <ul id="main-menu" class="metismenu">
           <li class="header">منوی اصلی</li>
-          <li class="active"><a href="/"><i class="fa fa-home"></i><span>خانه</span></a></li>
+          <li><a href="/"><i class="fa fa-home"></i><span>خانه</span></a></li>
           <li><a href="/requests"><i class="fa fa-envelope"></i><span>درخواست ها</span></a></li>
           <li><a href="/newitem"><i class="fa fa-diamond"></i><span>ثبت درخواست</span></a></li>
           <li><a href="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></a></li>
