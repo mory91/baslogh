@@ -3203,7 +3203,8 @@ ul.choose-skin li.active div::after {
   background-color: transparent;
   border-color: #393d42;
   font-size: 15px;
-  color: #77797c
+  color: #77797c;
+  text-align: right;
 }
 
 .form-control.round {
