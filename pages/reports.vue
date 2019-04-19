@@ -1,4 +1,5 @@
 <template>
+  <div id="main-content">
   <div class="container-fluid">
     <div class="row clearfix">
   <div class="w100p">
@@ -74,7 +75,7 @@
   </div>
     </div>
   </div>
-
+  </div>
 </template>
 <script>
   export default {

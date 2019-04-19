@@ -2122,7 +2122,7 @@ a:focus {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   width: calc(100% - 230px);
-  float: right;
+  float: left;
   position: relative;
   margin-top: 62px;
   padding: 0 10px
