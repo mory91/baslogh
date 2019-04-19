@@ -1,8 +1,5 @@
 <template>
   <div id="main-content" dir="rtl">
-    <div style="margin-left: 40px">
-      <SideBar/>
-    </div>
     <div class="row clearfix">
       <ReferCase/>
     </div>
