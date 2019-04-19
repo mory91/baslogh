@@ -2,7 +2,7 @@
   <div class="auth_brand">
     <a href="javascript:void(0);">
       <img src="~assets/images/icon.svg" width="60" height="60" class="d-inline-block align-top" alt="">
-      <p style="margin-top: 5px">سامانه نظرات دانشگاه شهید بهشتی</p>
+      <p style="margin: 5px; size: ">سامانه نظرات دانشگاه شهید بهشتی</p>
     </a>
   </div>
 </template>
