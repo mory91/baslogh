@@ -2199,7 +2199,7 @@ html.fullscreen-bg #wrapper {
 .left_menu_icon #left-sidebar {
   background: #282b2f;
   width: 60px;
-  text-align: center
+  text-align: right
 }
 
 .left_menu_icon #left-sidebar .navbar-brand span {
@@ -2762,9 +2762,9 @@ html.fullscreen-bg #wrapper {
   transition: all 0.3s ease-in-out;
   width: 230px;
   height: 100%;
-  float: left;
+  float: right;
   position: fixed;
-  left: 0px;
+  right: 0px;
   z-index: 9
 }
 
@@ -3231,7 +3231,8 @@ ul.choose-skin li.active div::after {
   background: transparent;
   border-color: #393d42;
   color: #77797c;
-  font-size: 15px
+  font-size: 15px;
+  text-align :right;
 }
 
 .input-group-prepend .btn-outline-secondary,
@@ -6659,7 +6660,8 @@ small {
 
 .m-t-0,
 #left-sidebar {
-  margin-top: 0px
+  margin-top: 0px;
+  direction : rtl;
 }
 
 .m-r-0,
