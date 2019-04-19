@@ -2982,6 +2982,9 @@ html.fullscreen-bg #wrapper {
   position: absolute;
   bottom: 0
 }
+.input-group input[type="file"]{
+  display: none;
+}
 
 .megamenu {
   -webkit-transition: all 0.5s ease-in-out;
@@ -3391,6 +3394,8 @@ ul.choose-skin li.active div::after {
   position: relative;
   top: 1px
 }
+
+
 
 .input-group-addon .fancy-radio input[type="radio"]+span i,
 .input-group-addon .fancy-checkbox input[type="checkbox"]+span {
@@ -8359,6 +8364,8 @@ hr {
 }
 
 .table.table-custom.spacing5 {
+  direction: rtl;
+  text-align: right;
   border-spacing: 0 5px !important
 }
 
