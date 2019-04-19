@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="overlay"></div>
+    <div class="overlay" ></div>
     <div id="wrapper">
-      <div id="left-sidebar" class="sidebar">
+      <div id="left-sidebar" class="sidebar"  >
         <div class="navbar-brand">
           <logo/>
         </div>
-        <div class="sidebar-scroll">
+        <div class="sidebar-scroll" style="margin-left: 10px; border-left: lightskyblue">
           <div class="user-account">
             <div class="user_div">
               <img src="../assets/images/user.png" class="user-photo" alt="User Profile Picture">
@@ -25,9 +25,9 @@
           <nav id="left-sidebar-nav" class="sidebar-nav">
             <ul id="main-menu" class="metismenu">
               <li class="header">صفحات</li>
-              <li class="active"><n-link to="/index"><i class="icon-home"></i><span>خانه</span></n-link></li>
-              <li><n-link to="/reports"><i class="icon-speedometer"></i><span>گزارشات</span></n-link></li>
-              <li><n-link to="/newCase"><i class="icon-pencil"></i><span>ثبت مورد</span></n-link></li>
+              <li class="active"><n-link to="/index"><i class="icon-home"></i><span>&nbsp;خانه</span></n-link></li>
+              <li><n-link to="/reports"><i class="icon-speedometer"></i><span>&nbsp;گزارشات</span></n-link></li>
+              <li><n-link to="/newCase"><i class="icon-pencil"></i><span>&nbsp;ثبت مورد</span></n-link></li>
 
             </ul>
           </nav>

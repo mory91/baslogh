@@ -6667,6 +6667,7 @@ small {
 #left-sidebar {
   margin-top: 0px;
   direction : rtl;
+  text-align: right;
 }
 
 .m-r-0,
@@ -10242,7 +10243,8 @@ hr {
 
 .theme-cyan .sidebar-nav .metismenu>li.active>a i {
   background: #17C2D7;
-  color: #fff
+  color: #fff;
+  margin-left :5px
 }
 
 .theme-cyan .sidebar-nav .metismenu>li ul .active a {

@@ -1,30 +1,23 @@
 <template>
-  <div id="main-content" dir="rtl">
-    <div class="row clearfix">
-      <NewCase />
+  <section class="container">
+    <div style="border-left: lightskyblue">
+      <sideBar/>
     </div>
-  </div>
+    <div>
+      <NewCase/>
+    </div>
+
+  </section>
 </template>
 <script>
+
+  import sideBar from '~/components/SideBar.vue'
   import NewCase from '~/components/NewCase.vue'
 
   export default {
     components: {
-      NewCase,
-    },
-    head () {
-      return {
-        script: [
-          { src: "/bundles/libscripts.bundle.js", body: true},
-          { src: "/bundles/vendorscripts.bundle.js", body: true },
-          { src: "/bundles/mainscripts.bundle.js", body: true }
-        ],
-        link: [
-          { rel: 'stylesheet', href: 'vendor/bootstrap/css/bootstrap.min.css' },
-          { rel: 'stylesheet', href: 'vendor/font-awesome/css/font-awesome.min.css' },
-          { rel: 'stylesheet', href: 'vendor/animate-css/vivify.min.css' }
-        ]
-      }
+      sideBar,
+      NewCase
     }
   }
 </script>
