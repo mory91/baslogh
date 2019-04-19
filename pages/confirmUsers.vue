@@ -38,8 +38,8 @@
           <td>
             <div class="d-flex align-items-center">
               <div class="ml-3">
-                <a href="page-invoices-detail.html" title="">عرفانه محمودزاده</a>
-                <p class="mb-0">er.mahmoudzadeh@gmail.com</p>
+                <a href="page-invoices-detail.html" title="">مرتضی حسینی</a>
+                <p class="mb-0">mortezahosseini@gmail.com</p>
               </div>
             </div>
           </td>
