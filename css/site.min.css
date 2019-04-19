@@ -7,6 +7,18 @@
   font-style: normal
 }
 
+@font-face {
+  font-family: 'vazir';
+  src: url("../assets/fonts/Vazir.eot");
+  src: url("../assets/fonts/Vazir.eot") format("embedded-opentype"), url("../assets/fonts/Vazir.woff") format("woff"), url("../assets/fonts/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal
+}
+
+body {
+  font-family: 'vazir' !important;
+}
+
 [data-icon]:before {
   font-family: 'simple-Line-Icons';
   content: attr(data-icon);

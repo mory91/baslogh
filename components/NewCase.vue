@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-10">
+    <div class="col-md-12">
       <div class="card">
         <div class="body">
           <div class="input-group mb-3">
