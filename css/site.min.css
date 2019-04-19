@@ -2176,7 +2176,7 @@ html.fullscreen-bg #wrapper {
 }
 
 .box_layout.offcanvas-active #left-sidebar {
-  left: 0;
+  right: 0;
   background: #22252a
 }
 
@@ -2776,7 +2776,7 @@ html.fullscreen-bg #wrapper {
     -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
-    left: -230px;
+    right: -230px;
     background-color: #22252a
   }
 }
@@ -2816,7 +2816,7 @@ html.fullscreen-bg #wrapper {
 }
 
 .offcanvas-active #left-sidebar {
-  left: 0
+  right: 0
 }
 
 @media screen and (max-width: 767px) {
@@ -2836,7 +2836,7 @@ html.fullscreen-bg #wrapper {
 }
 
 .layout-fullwidth #wrapper #left-sidebar {
-  left: -230px
+  right: -230px
 }
 
 .layout-fullwidth #wrapper #left-sidebar.ps {
@@ -2856,13 +2856,11 @@ html.fullscreen-bg #wrapper {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
+  margin: auto;
+  text-align: center;
   *zoom: 1;
   *display: inline;
   padding: 2px;
-  vertical-align: top
 }
 
 .user-account .user_div .user-photo {
@@ -6730,12 +6728,15 @@ ul.choose-skin li,
 }
 
 .m-l-10,
-#left-sidebar .navbar-brand span,
 .user-account .dropdown,
 .accordion2 .accordion-thumb span,
 .setting-list li>span,
 .mail-inbox .mail-right .mail-list ul li .md-right p {
   margin-left: 10px
+}
+
+#left-sidebar .navbar-brand span {
+  margin-right: 10px;
 }
 
 .m-t-10,
@@ -6748,11 +6749,14 @@ ul.choose-skin li,
 }
 
 .m-r-10,
-.metismenu>li i,
 .user-account .dropdown .dropdown-menu a i,
 .top_counter .icon,
 .right_chat .media .media-object {
   margin-right: 10px
+}
+
+.metismenu>li i {
+  margin-left: 10px;
 }
 
 .m-b-10,
