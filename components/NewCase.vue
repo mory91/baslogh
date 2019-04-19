@@ -89,19 +89,13 @@
     head() {
       return {
         script: [
-          {src: "/bundles/libscripts.bundle.js", body: true},
-          {src: "/bundles/vendorscripts.bundle.js", body: true},
-          {src: "/bundles/mainscripts.bundle.js", body: true},
           {src: "/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js", body: true},
           {src: "/vendor/ckeditor/ckeditor.js", body: true},
           {src: "/bundles/advanced-form-elements.js", body: true},
           {src: "/bundles/editors.js", body: true}
         ],
         link: [
-          {rel: 'stylesheet', href: 'vendor/bootstrap/css/bootstrap.min.css'},
-          {rel: 'stylesheet', href: 'vendor/font-awesome/css/font-awesome.min.css'},
           {rel: 'stylesheet', href: '/vendor/dropify/css/dropify.min.css'},
-          {rel: 'stylesheet', href: 'vendor/animate-css/vivify.min.css'}
 
         ]
       }
