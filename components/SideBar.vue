@@ -52,8 +52,6 @@
           {src: "/bundles/libscripts.bundle.js", body: true},
           {src: "/bundles/vendorscripts.bundle.js", body: true},
           {src: "/bundles/c3.bundle.js", body: true},
-          {src: "/js/pages/forms/advanced-form-elements.js", body: true},
-          {src: "/js/pages/forms/advanced-form-elements.js", body: true},
           {src: "/bundles/mainscripts.bundle.js", body: true}
         ],
         link: [

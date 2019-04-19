@@ -41,19 +41,28 @@
 
 
 
+          <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card">
                 <div class="body">
-                  <div class="summernote">
-                    Hi there,
-                    <br/><br/>
-                    <p>The toolbar can be customized and it also supports various callbacks such as <code>oninit</code>, <code>onfocus</code>, <code>onpaste</code> and many more.</p>
-                    <p><strong>Note:</strong> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                    <br/><br/>
-                    <p>Thank you!</p>
-                    <h6>Summer Note</h6>
-                  </div>
+                  <textarea id="ckeditor">
+                      <h2>WYSIWYG Editor</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper sapien non nisl facilisis bibendum in quis tellus. Duis in urna bibendum turpis pretium fringilla. Aenean neque velit, porta eget mattis ac, imperdiet quis nisi. Donec non dui et tortor vulputate luctus. Praesent consequat rhoncus velit, ut molestie arcu venenatis sodales.</p>
+                      <h3>Lacinia</h3>
+                      <ul>
+                          <li>Suspendisse tincidunt urna ut velit ullamcorper fermentum.</li>
+                          <li>Nullam mattis sodales lacus, in gravida sem auctor at.</li>
+                          <li>Praesent non lacinia mi.</li>
+                          <li>Mauris a ante neque.</li>
+                          <li>Aenean ut magna lobortis nunc feugiat sagittis.</li>
+                      </ul>
+                      <h3>Pellentesque adipiscing</h3>
+                      <p>Maecenas quis ante ante. Nunc adipiscing rhoncus rutrum. Pellentesque adipiscing urna mi, ut tempus lacus ultrices ac. Pellentesque sodales, libero et mollis interdum, dui odio vestibulum dolor, eu pellentesque nisl nibh quis nunc. Sed porttitor leo adipiscing venenatis vehicula. Aenean quis viverra enim. Praesent porttitor ut ipsum id ornare.</p>
+                  </textarea>
                 </div>
               </div>
+            </div>
+          </div>
 
 
         </div>
@@ -71,22 +80,20 @@
           {src: "/bundles/libscripts.bundle.js", body: true},
           {src: "/bundles/vendorscripts.bundle.js", body: true},
           {src: "/bundles/mainscripts.bundle.js", body: true},
-          {src: "/vendor/summernote/dist/summernote.js", body: true},
-          {src: "/vendor/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js", body: true}
+          {src: "/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js", body: true},
+          {src: "/vendor/ckeditor/ckeditor.js", body: true},
+          {src: "/bundles/advanced-form-elements.js", body: true},
+          {src: "/bundles/editors.js", body: true}
         ],
         link: [
           {rel: 'stylesheet', href: 'vendor/bootstrap/css/bootstrap.min.css'},
           {rel: 'stylesheet', href: 'vendor/font-awesome/css/font-awesome.min.css'},
-          {rel: 'stylesheet', href: 'vendor/summernote/dist/summernote.css'},
           {rel: 'stylesheet', href: 'vendor/animate-css/vivify.min.css'}
         ]
       }
     },
   }
 </script>
-
-<!--<script src="../assets/vendor/summernote/dist/summernote.js"></script>-->
-<!--<link rel="stylesheet" href="../assets/vendor/summernote/dist/summernote.css"/>-->
 <style scoped>
 
 </style>
