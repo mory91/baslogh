@@ -25,9 +25,12 @@
           <nav id="left-sidebar-nav" class="sidebar-nav">
             <ul id="main-menu" class="metismenu">
               <li class="header">صفحات</li>
-              <li class="active"><n-link to="/index"><i class="icon-home"></i><span>خانه</span></n-link></li>
-              <li><n-link to="/reports"><i class="icon-speedometer"></i><span>گزارشات</span></n-link></li>
-              <li><n-link to="/newCase"><i class="icon-pencil"></i><span>ثبت مورد</span></n-link></li>
+              <li class="active"><n-link to="/index"><i class="icon-home"></i><span>&nbsp;خانه</span></n-link></li>
+              <li><n-link to="/reports"><i class="icon-speedometer"></i><span>&nbsp;گزارشات</span></n-link></li>
+              <li><n-link to="/newCase"><i class="icon-pencil"></i><span>&nbsp;ثبت مورد&nbsp;</span></n-link></li>
+              <li><n-link to="/newCase"><i class="fa fa-list-alt"></i><span>&nbsp; موارد پیشین</span></n-link></li>
+              <li><n-link to="/newCase"><i class="fa fa-list"></i><span>&nbsp;موارد ثبت شده</span></n-link></li>
+              <li><n-link to="/newCase"><i class="fa fa-users"></i><span>&nbsp;مدیریت کاربران</span></n-link></li>
 
             </ul>
           </nav>
