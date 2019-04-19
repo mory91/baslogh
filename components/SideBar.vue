@@ -1,7 +1,7 @@
 <template>
   <div id="left-sidebar" class="sidebar theme-orange text-right" dir="rtl">
     <div class="navbar-brand">
-      <a href="index.html"><img src="../assets/images/icon.svg" alt="Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></a>
+      <a href="/"><img src="../assets/images/icon.svg" alt="Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></a>
       <button type="button" class="btn-toggle-offcanvas btn btn-sm float-left"><i class="lnr lnr-menu fa fa-chevron-circle-right"></i></button>
     </div>
     <div class="sidebar-scroll">
