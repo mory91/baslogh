@@ -89,7 +89,6 @@
       return {
         script: [
           {src: "/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js", body: true},
-          {src: "/vendor/ckeditor/ckeditor.js", body: true},
           {src: "/bundles/advanced-form-elements.js", body: true},
           {src: "/bundles/editors.js", body: true}
         ],

@@ -82,8 +82,7 @@
     head () {
       return {
         script: [
-          { src: "/bundles/chartist.bundle.js", body: true },
-          { src: "/bundles/chartjs.js", body: true }
+          { src: "/bundles/chartjs.js", body: true },
         ],
         link: [
           { rel: 'stylesheet', href: 'vendor/chartist/css/chartist.min.css' },

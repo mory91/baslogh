@@ -1,7 +1,7 @@
 <template>
   <div id="left-sidebar" class="sidebar theme-orange text-right" dir="rtl">
     <div class="navbar-brand">
-      <a href="/"><img src="../assets/images/icon.svg" alt="Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></a>
+      <n-link to="/"><img src="../assets/images/icon.svg" alt="Logo" class="img-fluid logo"><span>دانشگاه شهید بهشتی</span></n-link>
       <button type="button" class="btn-toggle-offcanvas btn btn-sm float-left"><i class="lnr lnr-menu fa fa-chevron-circle-right"></i></button>
     </div>
     <div class="sidebar-scroll">
@@ -17,15 +17,15 @@
       <nav id="left-sidebar-nav" class="sidebar-nav">
         <ul id="main-menu" class="metismenu">
           <li class="header">منوی اصلی</li>
-          <li><a href="/"><i class="fa fa-home"></i><span>خانه</span></a></li>
-          <li><a href="/requests"><i class="fa fa-envelope"></i><span>درخواست ها</span></a></li>
-          <li><a href="/newitem"><i class="fa fa-diamond"></i><span>ثبت درخواست</span></a></li>
-          <li><a href="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></a></li>
-          <li><a href="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></a></li>
-          <li><a href="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></a></li>
-          <li><a href="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></a></li>
-          <li v-if=" $store.state.authUser.role == 'admin' "><a href="/confirm-users"><i class="fa fa-users"></i><span>تایید کاربران</span></a></li>
-          <li v-if=" $store.state.authUser.role == 'admin' "><a href="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></a></li>
+          <li><n-link to="/"><i class="fa fa-home"></i><span>خانه</span></n-link></li>
+          <li><n-link to="/requests"><i class="fa fa-envelope"></i><span>درخواست ها</span></n-link></li>
+          <li><n-link to="/newitem"><i class="fa fa-diamond"></i><span>ثبت درخواست</span></n-link></li>
+          <li><n-link to="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></n-link></li>
+          <li><n-link to="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></n-link></li>
+          <li><n-link to="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></n-link></li>
+          <li><n-link to="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></n-link></li>
+          <li v-if=" $store.state.authUser.role == 'admin' "><n-link to="/confirm-users"><i class="fa fa-users"></i><span>تایید کاربران</span></n-link></li>
+          <li v-if=" $store.state.authUser.role == 'admin' "><n-link to="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></n-link></li>
         </ul>
       </nav>
     </div>

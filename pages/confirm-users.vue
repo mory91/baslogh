@@ -18,7 +18,7 @@
           <td>
             <div class="d-flex align-items-center">
               <div class="ml-3">
-                <a href="page-invoices-detail.html" title="">عرفانه محمودزاده</a>
+                <a href="#" title="">عرفانه محمودزاده</a>
                 <p class="mb-0">er.mahmoudzadeh@gmail.com</p>
               </div>
             </div>
@@ -38,7 +38,7 @@
           <td>
             <div class="d-flex align-items-center">
               <div class="ml-3">
-                <a href="page-invoices-detail.html" title="">عرفانه محمودزاده</a>
+                <a href="#" title="">عرفانه محمودزاده</a>
                 <p class="mb-0">er.mahmoudzadeh@gmail.com</p>
               </div>
             </div>

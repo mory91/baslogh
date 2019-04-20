@@ -1,6 +1,6 @@
 
 //=========================
-$(function () {
+(function () {
 
     var options;
     var data = {
@@ -177,4 +177,4 @@ $(function () {
             offset: 75
         }
     });
-});
+})();

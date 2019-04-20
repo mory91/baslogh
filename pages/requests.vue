@@ -51,7 +51,7 @@
             <div class="d-flex align-items-center">
               <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
               <div class="mr-3">
-                <a href="page-invoices-detail.html" title="">غفوری</a>
+                <a href="#" title="">غفوری</a>
                 <p class="mb-0">ghafouri@sbu.ac.ir</p>
               </div>
             </div>
