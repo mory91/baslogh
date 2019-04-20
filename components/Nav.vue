@@ -49,7 +49,7 @@
               </form>
             </li>
             <li><n-link to="/edit-profile" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-user"></i></n-link></li>
-            <li><a href="" class="icon-menu"><i class="icon-power"></i></a></li>
+            <li><n-link to="/login" class="icon-menu"><i class="icon-power"></i></n-link></li>
           </ul>
         </div>
       </div>
