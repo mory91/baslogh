@@ -15,7 +15,8 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.4.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

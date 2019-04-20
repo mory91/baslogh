@@ -15,14 +15,14 @@
         <div class="card">
           <div class="body">
             <p class="lead">ورود به سامانه</p>
-            <form class="form-auth-small m-t-20" action="/">
+            <form class="form-auth-small m-t-20" @submit.prevent="login">
               <div class="form-group">
                 <label for="signin-email" class="control-label sr-only">Email</label>
-                <input type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
+                <input v-model="formUsername" type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
               </div>
               <div class="form-group">
                 <label for="signin-password" class="control-label sr-only">Password</label>
-                <input type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
+                <input v-model="formPassword" type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
               </div>
               <div class="form-group clearfix">
                 <label class="fancy-checkbox element-right">
@@ -54,31 +54,31 @@
     },
     data() {
       return {
-        email: '',
-        password: '',
-        error: null
+        formError: null,
+        formUsername: '',
+        formPassword: ''
       }
     },
-
     methods: {
-      async register() {
+      async login() {
         try {
-          await this.$axios.post('register', {
-            username: this.username,
-            email: this.email,
-            password: this.password
+          await this.$store.dispatch('login', {
+            username: this.formUsername,
+            password: this.formPassword
           })
-
-          await this.$auth.loginWith('local', {
-            data: {
-              email: this.email,
-              password: this.password
-            },
-          })
-
+          this.formUsername = ''
+          this.formPassword = ''
+          this.formError = null
           this.$router.push('/')
         } catch (e) {
-          this.error = e.response.data.message
+          this.formError = e.message
+        }
+      },
+      async logout() {
+        try {
+          await this.$store.dispatch('logout')
+        } catch (e) {
+          this.formError = e.message
         }
       }
     }
