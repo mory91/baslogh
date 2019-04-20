@@ -13,7 +13,7 @@
         <div class="card">
           <div class="body">
             <p class="lead">ثبت نام</p>
-            <form class="form-auth-small m-t-20">
+            <form class="form-auth-small m-t-20" action="/">
               <div class="form-group">
                 <input type="email" class="form-control round" placeholder="Your email">
               </div>
@@ -45,6 +45,7 @@
 <script>
   import Logo from '~/components/Logo.vue'
   export default {
+    layout: 'auth',
     components:{
       Logo
     },

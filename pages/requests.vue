@@ -43,6 +43,26 @@
             <button type="button" class="btn btn-sm btn-default" title="Dislike" data-toggle="tooltip" data-placement="top"><i class="icon-dislike"></i></button>
           </td>
         </tr>
+        <tr>
+          <td>
+            <span>02</span>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
+              <div class="mr-3">
+                <a href="page-invoices-detail.html" title="">غفوری</a>
+                <p class="mb-0">ghafouri@sbu.ac.ir</p>
+              </div>
+            </div>
+          </td>
+          <td>مرتضی حسینی</td>
+          <td>حسن غفوری</td>
+          <td>۲۲ آبان</td>
+          <td><span class="badge badge-warning ml-0 mr-0">Waiting</span></td>
+          <td>
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>
@@ -52,5 +72,6 @@
 
 <script>
   export default {
+
   }
 </script>

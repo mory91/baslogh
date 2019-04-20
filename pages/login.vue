@@ -15,7 +15,7 @@
         <div class="card">
           <div class="body">
             <p class="lead">ورود به سامانه</p>
-            <form class="form-auth-small m-t-20" action="index.html">
+            <form class="form-auth-small m-t-20" action="/">
               <div class="form-group">
                 <label for="signin-email" class="control-label sr-only">Email</label>
                 <input type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
@@ -48,6 +48,7 @@
 <script>
   import Logo from '~/components/Logo.vue'
   export default {
+    layout: 'auth',
     components:{
       Logo
     },
