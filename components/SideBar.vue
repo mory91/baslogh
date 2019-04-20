@@ -19,11 +19,10 @@
           <li class="header">منوی اصلی</li>
           <li><a href="/"><i class="fa fa-home"></i><span>خانه</span></a></li>
           <li><a href="/requests"><i class="fa fa-envelope"></i><span>درخواست ها</span></a></li>
-          <li><a href="/newitem"><i class="fa fa-diamond"></i><span>ثبت درخواست</span></a></li>
+          <li><a href="/newitem"><i class="fa fa-pencil"></i><span>ثبت درخواست</span></a></li>
           <li><a href="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></a></li>
-          <li><a href="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></a></li>
           <li><a href="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></a></li>
-          <li><a href="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></a></li>
+          <li><a href="/cartable"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></a></li>
           <li><a href="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></a></li>
         </ul>
       </nav>

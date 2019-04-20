@@ -32,8 +32,10 @@
                   <span>شرح کمی از کار ...</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary btn-sm">ورود</button>
-                  <button class="btn btn-success btn-sm">انجام شد</button>
+                  <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                  </div>
+
                 </td>
               </tr>
               <tr>
@@ -51,8 +53,9 @@
                   <span>شرح کمی از کار ...</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary btn-sm">ورود</button>
-                  <button class="btn btn-success btn-sm">انجام شد</button>
+                  <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -70,8 +73,9 @@
                   <span>شرح کمی از کار ...</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary btn-sm">ورود</button>
-                  <button class="btn btn-success btn-sm">انجام شد</button>
+                  <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -89,8 +93,9 @@
                   <span>شرح کمی از کار ...</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary btn-sm">ورود</button>
-                  <button class="btn btn-success btn-sm">انجام شد</button>
+                  <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -108,8 +113,9 @@
                   <span>شرح کمی از کار ...</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary btn-sm">ورود</button>
-                  <button class="btn btn-success btn-sm">انجام شد</button>
+                  <div class="col-md-6 col-sm-12 text-right hidden-xs">
+                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                  </div>
                 </td>
               </tr>
               </tbody>

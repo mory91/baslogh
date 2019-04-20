@@ -2293,10 +2293,12 @@ html.fullscreen-bg #wrapper {
 }
 
 .card .header {
-  color: #212834;
+  color: darkgrey;
   padding-bottom: 15px;
   position: relative;
-  box-shadow: none
+  box-shadow: none;
+  margin-top: 10px;
+  margin-left: 40%;
 }
 
 @media screen and (max-width: 767px) {
@@ -6705,7 +6707,7 @@ ul.choose-skin li:last-child,
 .mail-inbox .mail-right .mail-list ul li .md-right p,
 .pricing,
 .pricing h3 {
-  margin-bottom: 0px
+  margin-bottom: 5px
 }
 
 .m-l-5,

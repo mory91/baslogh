@@ -29,6 +29,7 @@
             </ul>
           </li>
           <li><a href="javascript:void(0);" class="megamenu_toggle icon-menu" title="Contact">تماس با ما</a></li>
+          <li><a href="/" class="megamenu_toggle icon-menu" title="Contact"> درباره ی ما</a></li>
         </ul>
 
 
