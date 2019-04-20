@@ -19,7 +19,7 @@
           <li class="header">منوی اصلی</li>
           <li><n-link to="/"><i class="fa fa-home"></i><span>خانه</span></n-link></li>
           <li><n-link to="/requests"><i class="fa fa-envelope"></i><span>درخواست ها</span></n-link></li>
-          <li><n-link to="/newitem"><i class="fa fa-diamond"></i><span>ثبت درخواست</span></n-link></li>
+          <li><n-link to="/newitem"><i class="fa fa-pencil"></i><span>ثبت درخواست</span></n-link></li>
           <li><n-link to="/confirm-users"><i class="fa fa-user"></i><span>کاربران جدید</span></n-link></li>
           <li><n-link to="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></n-link></li>
           <li><n-link to="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></n-link></li>

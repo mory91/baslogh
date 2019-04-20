@@ -58,5 +58,6 @@ module.exports = {
   css: [
     '~/css/site.min.css'
   ]
+
 }
 

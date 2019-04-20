@@ -7,7 +7,7 @@ export const state = () => ({
 export const mutations = {
   SET_USER: function (state, user) {
     state.authUser = user
-    console.log(state.authUser)
+    state.loggedIn = true
   }
 }
 
