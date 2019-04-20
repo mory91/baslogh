@@ -24,7 +24,8 @@
           <li><a href="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></a></li>
           <li><a href="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></a></li>
           <li><a href="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></a></li>
-          <li><a href="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></a></li>
+          <li v-if=" $store.state.authUser.role == 'admin' "><a href="/confirm-users"><i class="fa fa-users"></i><span>تایید کاربران</span></a></li>
+          <li v-if=" $store.state.authUser.role == 'admin' "><a href="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></a></li>
         </ul>
       </nav>
     </div>
