@@ -3275,7 +3275,9 @@ ul.choose-skin li.active div::after {
   color: #a5a8ad;
   background: #393d42
 }
-
+.rtl {
+  direction: rtl;
+}
 .fancy-checkbox {
   margin-right: 10px;
   direction : rtl;

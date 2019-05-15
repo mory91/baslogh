@@ -24,8 +24,10 @@
           <li><n-link to="/edit-profile"><i class="fa fa-book"></i><span>ویرایش حساب</span></n-link></li>
           <li><n-link to="/reports"><i class="fa fa-bar-chart"></i><span>گزارش ها</span></n-link></li>
           <li><n-link to="/referItem"><i class="fa fa-recycle"></i><span>مشاهده ارجاعات</span></n-link></li>
-          <li v-if=" $store.state.authUser.role == 'admin' "><n-link to="/confirm-users"><i class="fa fa-users"></i><span>تایید کاربران</span></n-link></li>
-          <li v-if=" $store.state.authUser.role == 'admin' "><n-link to="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></n-link></li>
+          <!--<li v-if=" $store.state.authUser.role == 'admin' ">-->
+          <li ><n-link to="/confirm-users"><i class="fa fa-users"></i><span>تایید کاربران</span></n-link></li>
+          <!--<li v-if=" $store.state.authUser.role == 'admin' ">-->
+          <li><n-link to="/users"><i class="fa fa-magic"></i><span>مدیریت کاربران</span></n-link></li>
         </ul>
       </nav>
     </div>

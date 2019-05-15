@@ -13,12 +13,21 @@
         <div class="card">
           <div class="body">
             <p class="lead">ثبت نام</p>
-            <form class="form-auth-small m-t-20" action="/">
+            <form class="form-auth-small m-t-20 rtl" action="/">
               <div class="form-group">
-                <input type="email" class="form-control round" placeholder="Your email">
+                <input type="text" class="form-control round" placeholder="نام">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control round" placeholder="Password">
+                <input type="text" class="form-control round" placeholder="نام خانوادگی">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control round" placeholder="شناسه کاربری">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control round" placeholder="ایمیل">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control round" placeholder="رمز عبور">
               </div>
               <div class="form-group">
                 <select class="form-control round" name="cars">

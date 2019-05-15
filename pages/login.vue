@@ -15,14 +15,14 @@
         <div class="card">
           <div class="body">
             <p class="lead">ورود به سامانه</p>
-            <form class="form-auth-small m-t-20" @submit.prevent="login">
+            <form class="form-auth-small m-t-20 rtl" @submit.prevent="login">
               <div class="form-group">
                 <label for="signin-email" class="control-label sr-only">Email</label>
-                <input v-model="formUsername" type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
+                <input v-model="formUsername" type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="ایمیل">
               </div>
               <div class="form-group">
                 <label for="signin-password" class="control-label sr-only">Password</label>
-                <input v-model="formPassword" type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
+                <input v-model="formPassword" type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="رمز عبور">
               </div>
               <div class="form-group clearfix">
                 <label class="fancy-checkbox element-right">
