@@ -22,7 +22,8 @@
     <div class="col-md-12">
       <div class="card">
         <div class="body">
-          <div class="form-group" onclick="showHistory()">
+          <!--<div class="form-group" onclick="showHistory()">-->
+          <div class="form-group" >
           <label>ارجاع های قبلی&nbsp;<i id = "show" class="fa fa-caret-square-o-down"></i></label>
             <br>
              </div>
@@ -98,7 +99,7 @@
           return {
             script: [
               {src: "/bundles/advanced-form-elements.js", body: true},
-              {src: "/bundles/myFunctions.js"},
+              // {src: "/bundles/myFunctions.js"},
               {src: "/bundles/editors.js", body: true}
             ]
           }

@@ -13,12 +13,12 @@
         <div class="card">
           <div class="body">
             <p class="lead">ثبت نام</p>
-            <form class="form-auth-small m-t-20" action="/">
+            <form class="form-auth-small m-t-20" action="/" @submit.prevent="register">
               <div class="form-group">
-                <input type="email" class="form-control round" placeholder="Your email">
+                <input v-model="firstname" type="email" class="form-control round" placeholder="Your email">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control round" placeholder="Password">
+                <input v-model="lastname" type="password" class="form-control round" placeholder="Password">
               </div>
               <div class="form-group">
                 <select class="form-control round" name="cars">
@@ -51,8 +51,8 @@
     },
     data() {
       return {
-        email: '',
-        password: '',
+        firstname: '',
+        lastname: '',
         error: null
       }
     },
@@ -60,24 +60,18 @@
     methods: {
       async register() {
         try {
-          await this.$axios.post('register', {
-            username: this.username,
-            email: this.email,
-            password: this.password
+          await this.$store.dispatch('register', {
+            firstname: this.firstname,
+            lastname: this.lastname
           })
-
-          await this.$auth.loginWith('local', {
-            data: {
-              email: this.email,
-              password: this.password
-            },
-          })
-
+          this.firstname = ''
+          this.lastname = ''
+          this.error = null
           this.$router.push('/')
         } catch (e) {
-          this.error = e.response.data.message
+          this.error = e.message
         }
-      }
+      },
     }
   }
 </script>
