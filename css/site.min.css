@@ -10676,3 +10676,12 @@ hr {
   background: #e25985
 }
 
+.content-area {
+  width: 100%;
+  height: 15rem;
+  resize: none;
+}
+
+.form-control[readonly] {
+  background-color: #282b2f;
+}

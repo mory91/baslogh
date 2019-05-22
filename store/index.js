@@ -6,6 +6,7 @@ export const state = () => ({
 
 export const mutations = {
   SET_USER: function (state, user) {
+    console.log(user)
     state.authUser = user
     state.loggedIn = true
   }
@@ -18,10 +19,10 @@ export const actions = {
       commit('SET_USER', req.session.authUser)
     }
   },
-  async login({ commit }, { username, password }) {
+  async login({ commit }, { email, password }) {
 
     try {
-      const { data } = await axios.post('http://localhost:8000/api/login', { username, password })
+      const { data } = await axios.post('http://localhost:8080/api/v1/user/login', { email, password })
       commit('SET_USER', data)
     } catch (error) {
       if (error.response && error.response.status === 401) {
@@ -31,10 +32,10 @@ export const actions = {
     }
   },
 
-  async register({ commit }, { firstname, lastname }) {
-
+  async register({ commit }, { email, password, roles }) {
+    console.log(roles)
     try {
-      const { data } = await axios.post('http://localhost:8080/api/v1/user', { firstname, lastname })
+      const { data } = await axios.post('http://localhost:8080/api/v1/user/register', { email, password, roles })
       console.log(data)
       commit('SET_USER', data)
     } catch (error) {

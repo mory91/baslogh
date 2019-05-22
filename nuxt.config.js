@@ -1,4 +1,7 @@
 module.exports = {
+  plugins: [
+    { src: '~/plugins/datepicker', ssr: false}
+  ],
   /*
   ** Headers of the page
   */

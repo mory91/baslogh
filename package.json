@@ -16,6 +16,7 @@
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.4.1",
     "nuxt": "^2.0.0",
+    "vue2-datepicker": "^2.11.2",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

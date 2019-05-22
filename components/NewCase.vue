@@ -8,7 +8,7 @@
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
             <input v-model="author"  type="text" class="form-control" placeholder="نام و نام خانوادگی فرستنده" aria-label="Username"
-                   aria-describedby="basic-addon1">
+                   aria-describedby="basic-addon1" readonly>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -39,22 +39,11 @@
             <input v-model="title" type="text" class="form-control" placeholder="عنوان" aria-label="title"
                    aria-describedby="basic-addon1">
           </div>
-
-          <div>
-            <div class="input-group mb-3">
-              <input v-model="submitDate" data-provide="datepicker" data-date-autoclose="true" class="form-control"
-                     data-date-format="dd/mm/yyyy" placeholder="انتخاب زمان">
-            </div>
-          </div>
-
-
           <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card">
-                <div class="body">
-                  <textarea v-model="text" id="ckeditor">
+                  <textarea  v-model="case_content" placeholder="متن درخواست..." class="form-control content-area">
                   </textarea>
-                </div>
               </div>
             </div>
           </div>
@@ -78,6 +67,7 @@
 </template>
 
 <script>
+  import DatePickerWrapper from "./date-picker-wrapper";
   export default {
     name: "NewCase",
     head() {
@@ -96,12 +86,12 @@
 
     data(){
       return{
-        author :'',
+        author : this.$store.state.authUser.email,
         receiver:'',
         submitDate:'',
         subject:'',
         title:'',
-        text:'',
+        case_content:'',
         error:null
       }
     },
@@ -110,20 +100,19 @@
       async submitCase(){
         try {
           await this.$store.dispatch('submitCase', {
-            // author: this.firstname,
+            author: {id:this.$store.state.authUser.id },
             // receiver: this.receiver,
             submitDate: this.submitDate,
             subject: this.subject,
             title: this.title,
-            text: this.text
+            text: this.case_content
           })
-
-            // this.author= '',
-            // this.receiver= '',
-            this.submitDate= '',
-            this.subject='',
-            this.title='',
-            this.text= ''
+          // this.receiver= '',
+          this.submitDate= '',
+          this.subject='',
+          this.title='',
+          this.text= '',
+          this.case_content =''
           this.error = null
           this.$router.push('/')
         }

@@ -18,11 +18,11 @@
             <form class="form-auth-small m-t-20" @submit.prevent="login">
               <div class="form-group">
                 <label for="signin-email" class="control-label sr-only">Email</label>
-                <input v-model="formUsername" type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
+                <input v-model="email" type="email" class="form-control round" id="signin-email" value="user@domain.com" placeholder="Email">
               </div>
               <div class="form-group">
                 <label for="signin-password" class="control-label sr-only">Password</label>
-                <input v-model="formPassword" type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
+                <input v-model="password" type="password" class="form-control round" id="signin-password" value="thisisthepassword" placeholder="Password">
               </div>
               <div class="form-group clearfix">
                 <label class="fancy-checkbox element-right">
@@ -55,19 +55,19 @@
     data() {
       return {
         formError: null,
-        formUsername: '',
-        formPassword: ''
+        email: '',
+        password: ''
       }
     },
     methods: {
       async login() {
         try {
           await this.$store.dispatch('login', {
-            username: this.formUsername,
-            password: this.formPassword
+            email: this.email,
+            password: this.password
           })
-          this.formUsername = ''
-          this.formPassword = ''
+          this.email = ''
+          this.password = ''
           this.formError = null
           this.$router.push('/')
         } catch (e) {

@@ -15,17 +15,17 @@
             <p class="lead">ثبت نام</p>
             <form class="form-auth-small m-t-20" action="/" @submit.prevent="register">
               <div class="form-group">
-                <input v-model="firstname" type="email" class="form-control round" placeholder="Your email">
+                <input v-model="email" type="email" class="form-control round" placeholder="Your email">
               </div>
               <div class="form-group">
-                <input v-model="lastname" type="password" class="form-control round" placeholder="Password">
+                <input v-model="password" type="password" class="form-control round" placeholder="Password">
               </div>
               <div class="form-group">
-                <select class="form-control round" name="cars">
-                  <option value="employee">کارمند</option>
-                  <option value="student">دانشجو</option>
-                  <option value="professor">استاد</option>
-                  <option value="manager">مدیر</option>
+                <select v-model="roles" class="form-control round" name="cars">
+                  <option value="ROLE_CLERK">کارمند</option>
+                  <option value="ROLE_STUDENT">دانشجو</option>
+                  <option value="ROLE_PROF">استاد</option>
+                  <option value="ROLE_ADMIN">مدیر</option>
                 </select>
               </div>
               <button type="submit" class="btn btn-primary btn-round btn-block">ثبت نام</button>
@@ -51,8 +51,9 @@
     },
     data() {
       return {
-        firstname: '',
-        lastname: '',
+        email: '',
+        password: '',
+        roles:'',
         error: null
       }
     },
@@ -61,11 +62,13 @@
       async register() {
         try {
           await this.$store.dispatch('register', {
-            firstname: this.firstname,
-            lastname: this.lastname
+            email: this.email,
+            password: this.password,
+            roles: [this.roles]
           })
-          this.firstname = ''
-          this.lastname = ''
+          this.email = ''
+          this.password = ''
+          this.roles = ''
           this.error = null
           this.$router.push('/')
         } catch (e) {
