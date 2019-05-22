@@ -31,9 +31,39 @@ export const actions = {
     }
   },
 
+  async register({ commit }, { firstname, lastname }) {
+
+    try {
+      const { data } = await axios.post('http://localhost:8080/api/v1/user', { firstname, lastname })
+      console.log(data)
+      commit('SET_USER', data)
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        throw new Error('Bad credentials')
+      }
+      throw error
+    }
+  },
+
   async logout({ commit }) {
     await axios.post('http://localhost:8000/api/logout')
     commit('SET_USER', null)
+  },
+
+  async submitCase({commit}, {author, receiver, submitDate, subject, title, text}){
+    try{
+      const { data } = await axios.post('http://localhost:8080/api/v1/case', { author, receiver, submitDate, subject, title, text })
+      console.log(submitDate)
+      console.log(text)
+      console.log("content")
+      // commit('SET_CASE', data)
+    }catch (error) {
+      if (error.response && error.response.status === 401) {
+        throw new Error('Bad credentials')
+      }
+      throw error
+    }
+
   }
 
 }

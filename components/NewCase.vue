@@ -1,4 +1,5 @@
 <template>
+  <form class="form-auth-small m-t-20" action="/" @submit.prevent="submitCase">
     <div class="col-md-12">
       <div class="card">
         <div class="body">
@@ -6,57 +7,52 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="نام و نام خانوادگی فرستنده" aria-label="Username"
+            <input v-model="author"  type="text" class="form-control" placeholder="نام و نام خانوادگی فرستنده" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="نام و نام خانوادگی گیرنده" aria-label="Username"
+            <input v-model="receiver" type="text" class="form-control" placeholder="نام و نام خانوادگی گیرنده" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
 
-          <div>
-            <div class="input-group mb-3">
-              <input data-provide="datepicker" data-date-autoclose="true" class="form-control"
-                     data-date-format="dd/mm/yyyy" placeholder="انتخاب زمان">
-            </div>
-          </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">موضوع</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
+            <select v-model="subject" class="custom-select" id="inputGroupSelect01">
               <option selected>انتخاب کنید...</option>
-              <option value="1">شکایت</option>
-              <option value="2">انتقاد</option>
-              <option value="3">پیشنهاد</option>
-              <option value="3">درخواست</option>
+              <option value="grievance">شکایت</option>
+              <option value="criticism">انتقاد</option>
+              <option value="proposal">پیشنهاد</option>
+              <option value="request">درخواست</option>
             </select>
           </div>
 
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-sticky-note"></i></span>
+            </div>
+            <input v-model="title" type="text" class="form-control" placeholder="عنوان" aria-label="title"
+                   aria-describedby="basic-addon1">
+          </div>
 
+          <div>
+            <div class="input-group mb-3">
+              <input v-model="submitDate" data-provide="datepicker" data-date-autoclose="true" class="form-control"
+                     data-date-format="dd/mm/yyyy" placeholder="انتخاب زمان">
+            </div>
+          </div>
 
 
           <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card">
                 <div class="body">
-                  <textarea id="ckeditor">
-                      <h2>WYSIWYG Editor</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper sapien non nisl facilisis bibendum in quis tellus. Duis in urna bibendum turpis pretium fringilla. Aenean neque velit, porta eget mattis ac, imperdiet quis nisi. Donec non dui et tortor vulputate luctus. Praesent consequat rhoncus velit, ut molestie arcu venenatis sodales.</p>
-                      <h3>Lacinia</h3>
-                      <ul>
-                          <li>Suspendisse tincidunt urna ut velit ullamcorper fermentum.</li>
-                          <li>Nullam mattis sodales lacus, in gravida sem auctor at.</li>
-                          <li>Praesent non lacinia mi.</li>
-                          <li>Mauris a ante neque.</li>
-                          <li>Aenean ut magna lobortis nunc feugiat sagittis.</li>
-                      </ul>
-                      <h3>Pellentesque adipiscing</h3>
-                      <p>Maecenas quis ante ante. Nunc adipiscing rhoncus rutrum. Pellentesque adipiscing urna mi, ut tempus lacus ultrices ac. Pellentesque sodales, libero et mollis interdum, dui odio vestibulum dolor, eu pellentesque nisl nibh quis nunc. Sed porttitor leo adipiscing venenatis vehicula. Aenean quis viverra enim. Praesent porttitor ut ipsum id ornare.</p>
+                  <textarea v-model="text" id="ckeditor">
                   </textarea>
                 </div>
               </div>
@@ -72,14 +68,13 @@
             </div>
             <input type="text" class="form-control" placeholder="آدرس فایل" aria-label="Username"
                    aria-describedby="basic-addon1">
-
-
           </div>
-          <button type="button" class="btn btn-primary btn-round">ثبت</button>
+          <button type="submit" class="btn btn-primary btn-round btn-block">ثبت</button>
 
         </div>
       </div>
     </div>
+  </form>
 </template>
 
 <script>
@@ -98,5 +93,44 @@
         ]
       }
     },
+
+    data(){
+      return{
+        author :'',
+        receiver:'',
+        submitDate:'',
+        subject:'',
+        title:'',
+        text:'',
+        error:null
+      }
+    },
+
+    methods:{
+      async submitCase(){
+        try {
+          await this.$store.dispatch('submitCase', {
+            // author: this.firstname,
+            // receiver: this.receiver,
+            submitDate: this.submitDate,
+            subject: this.subject,
+            title: this.title,
+            text: this.text
+          })
+
+            // this.author= '',
+            // this.receiver= '',
+            this.submitDate= '',
+            this.subject='',
+            this.title='',
+            this.text= ''
+          this.error = null
+          this.$router.push('/')
+        }
+        catch (e) {
+
+        }
+      }
+    }
   }
 </script>
