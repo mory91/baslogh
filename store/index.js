@@ -58,7 +58,7 @@ export const actions = {
       console.log(text)
       console.log("content")
       // commit('SET_CASE', data)
-    }catch (error) {
+    } catch (error) {
       if (error.response && error.response.status === 401) {
         throw new Error('Bad credentials')
       }
