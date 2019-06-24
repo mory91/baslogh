@@ -7,14 +7,14 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input v-model="author"  type="text" class="form-control" placeholder="نام و نام خانوادگی فرستنده" aria-label="Username"
+            <input v-model="author.id"  type="text" class="form-control" placeholder="ایمیل فرستنده" aria-label="Username"
                    aria-describedby="basic-addon1" readonly>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input v-model="receiver" type="text" class="form-control" placeholder="نام و نام خانوادگی گیرنده" aria-label="Username"
+            <input v-model="receiver" type="text" class="form-control" placeholder="ایمیل گیرنده" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
 
@@ -86,7 +86,8 @@
 
     data(){
       return{
-        author : this.$store.state.authUser.email,
+       // author : this.$store.state.authUser.email,
+        author : {id:this.$store.state.authUser.email },
         receiver:'',
         submitDate:'',
         subject:'',
@@ -100,14 +101,14 @@
       async submitCase(){
         try {
           await this.$store.dispatch('submitCase', {
-            author: {id:this.$store.state.authUser.id },
-            // receiver: this.receiver,
+            author: {id:this.$store.state.authUser.email },
+            receiver: this.receiver,
             submitDate: this.submitDate,
             subject: this.subject,
             title: this.title,
             text: this.case_content
           })
-          // this.receiver= '',
+          this.receiver= '',
           this.submitDate= '',
           this.subject='',
           this.title='',
