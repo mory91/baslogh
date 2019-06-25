@@ -25,7 +25,7 @@
             </div>
           </td>
 
-          <td><span class="badge ml-0 mr-0" :class="getRoleClass(user.roles[0])">{{ getRole(user.roles[0]) }}</span></td>
+          <td><span class="badge ml-0 mr-0" :class="getRoleClass(user.roles[0])">{{getRole(user.roles[0]) }}</span></td>
           <td>
             <button @click="accept(user.id)" type="button" class="btn btn-sm btn-default" title="تایید" data-toggle="tooltip" data-placement="top"><i class="fa  fa-check"></i></button>
             <button @click="deactive(user.id)" type="button" class="btn btn-sm btn-default " title="حذف" data-toggle="tooltip" data-placement="top"><i class="fa  fa-times"></i></button>
@@ -79,4 +79,3 @@
     }
   }
 </script>
-

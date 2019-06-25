@@ -1,6 +1,5 @@
 <template>
     <div>
-
       <div class="table-responsive" dir="rtl">
         <table dir="rtl" class="table table-hover table-custom spacing5 text-right">
           <thead>
@@ -15,7 +14,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
+          <tr v-for="case_ in cases" v-bind:key="case_.id">
             <td>
               <span>01</span>
             </td>
@@ -28,35 +27,14 @@
                 </div>
               </div>
             </td>
-            <td>مرتضی حسینی</td>
-            <td>حسن غفوری</td>
-            <td>۲۲ آبان</td>
-            <td><span class="badge badge-success ml-0 mr-0">انجام شد</span></td>
+            <td>{{case_.receiver.firstname}} {{case_.receiver.lastname}} {{case_.receiver.email}}</td>
+            <td>{{case_.author.email}}</td>
+            <td>{{case_.receiver.createdAt}}</td>
+            <td><span class="badge badge-success ml-0 mr-0">{{case_.status}}</span></td>
             <td>
               <button type="button" class="btn btn-sm btn-default " title="Like" data-toggle="tooltip" data-placement="top"><i class="icon-like"></i></button>
               <button type="button" class="btn btn-sm btn-default" title="Dislike" data-toggle="tooltip" data-placement="top"><i class="icon-dislike"></i></button>
             </td>
-          </tr>
-
-          <tr>
-            <td>
-              <span>02</span>
-            </td>
-            <td>
-              <div class="d-flex align-items-center">
-                <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
-                <div class="mr-3">
-                  <a href="page-invoices-detail.html" title="">شمس فرد</a>
-                  <p class="mb-0">{{sag}}</p>
-                </div>
-              </div>
-            </td>
-            <td>مرتضی حسینی</td>
-            <td>دکتر شمس فرد</td>
-            <td>۲۲ آذر</td>
-            <td><span class="badge badge-warning ml-0 mr-0">در حال بررسی</span></td>
-            <td>
-           </td>
           </tr>
           </tbody>
         </table>
@@ -65,14 +43,9 @@
 </template>
 
 <script>
+  import axios from 'axios'
     export default {
-      name: "Request",
-      data() {
-        return {sag: ''}
-      },
-      mounted() {
-          this.sag = "SAGAGSUDASGDKLASGBDHKLASBDHLASBD"
-      }
+        name: "Request"
     }
 </script>
 
