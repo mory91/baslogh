@@ -64,12 +64,10 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-key"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="تکرار پسوورد" v-model="user.password" aria-label="Username"
+            <input type="text" class="form-control" placeholder="تکرار پسوورد" v-model="user.resetPassword" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
-
-
-          <button type="submit" class="btn btn-primary btn-round">ذخیره</button>
+          <button type="submit" @click="submitEdit" class="btn btn-primary btn-round">ذخیره</button>
         </div>
         </div>
     </div>
@@ -79,19 +77,16 @@
 <script>
   export default {
     async asyncData ({ $axios ,store}) {
-      console.log("salm")
+      console.log(store.state)
       var author =store.state.authUser.id
       var url = 'http://localhost:8080/api/v1/profile/getInfo/'+author;
       var url2 = 'http://localhost:8080/api/v1/profile/numOfSubmittedCase/'+author;
-      console.log(url)
-      console.log(author)
-      let data = await $axios.$get(url)
-      let data2 = await $axios.$get(url2)
-      console.log(data)
-      console.log("test")
-      return {user:data, num:data2}
-
-    }, methods: {
+      let user = await $axios.$get(url)
+      let num = await $axios.$get(url2)
+      user.resetPassword = ''
+      return {user, num}
+    },
+    methods: {
       getRole(role) {
         if (role == undefined) {
           return 'نامشخص'
@@ -103,27 +98,10 @@
         }
         return roles[role]
       },
-      data(){
-        return{
-          user:'',
-          error:null
-        }
-      },
-
-      methods:{
-        async submitCase(){
-          try {
-            await this.$store.dispatch('editProfile', {
-             user : this.user
-            })
-            this.user= '',
-            this.error = null
-            this.$router.push('/')
-          }
-          catch (e) {
-
-          }
-        }}
-
-    }}
+      async submitEdit(){
+          await this.$store.dispatch('editProfile', this.user)
+          this.$router.push('/')
+      }
+      }
+    }
 </script>

@@ -7,7 +7,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input v-model="author.id"  type="text" class="form-control" placeholder="ایمیل فرستنده" aria-label="Username"
+            <input v-model="author.email"  type="text" class="form-control" placeholder="ایمیل فرستنده" aria-label="Username"
                    aria-describedby="basic-addon1" readonly>
           </div>
           <div class="input-group mb-3">
@@ -87,7 +87,7 @@
     data(){
       return{
        // author : this.$store.state.authUser.email,
-        author : {id:this.$store.state.authUser.email },
+        author : {email:this.$store.state.authUser.email },
         receiver:'',
         submitDate:'',
         subject:'',
@@ -99,12 +99,10 @@
 
     methods:{
       async submitCase(){
-        console.log("test")
-        console.log(user)
         try {
           await this.$store.dispatch('submitCase', {
-            author: {id:this.$store.state.authUser.email },
-            receiver: this.receiver,
+            author: {email:this.$store.state.authUser.email },
+            receiver: {email: this.receiver},
             submitDate: this.submitDate,
             subject: this.subject,
             title: this.title,

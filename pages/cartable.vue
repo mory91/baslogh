@@ -27,13 +27,12 @@
                   <span>{{case_.receiver.email}}</span>
                 </td>
                 <td>
-                  <span>{{case_.title}} : {{case_.content}}</span>
+                  <span>{{case_.content.substr(0, 50)}}</span>
                 </td>
                 <td>
                   <div class="col-md-6 col-sm-12 text-right hidden-xs">
-                    <n-link to="/referItem" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
+                    <n-link :to="{path: 'referItem', query: {id: case_.id}}" class="btn btn-sm btn-primary btn-round float-left" title="">ورود</n-link>
                   </div>
-
                 </td>
               </tr>
               </tbody>
@@ -52,7 +51,7 @@
     async asyncData ({ $axios ,store}) {
       console.log("test1")
       var author =store.state.authUser.id
-      var url = 'http://localhost:8080/api/v1/profile/listReferredCase/'+author;
+      var url = 'http://localhost:8080/api/v1/profile/listrefferals/'+author;
       console.log(url)
       console.log(author)
       let data = await $axios.$get(url)

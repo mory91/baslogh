@@ -30,15 +30,15 @@
             <div class="d-flex align-items-center">
               <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
               <div class="mr-3">
-                <a href="page-invoices-detail.html" title="">{{case_.receiver.email}}</a>
+                <a>{{case_.receiver.email}}</a>
                 <p class="mb-0">{{case_.receiver.lastname}}</p>
               </div>
             </div>
           </td>
           <td> {{case_.author.email}} </td>
           <td>{{case_.receiver.email}}</td>
-          <td>{{case_.createdAt}}</td>
-          <td><span class="badge  ml-0 mr-0" :class="getStatusClass(case_.staus)">{{ getStatus(case_.staus) }}</span></td>
+          <td>{{(new Date(case_.createdAt)).toLocaleDateString()}}</td>
+          <td><span class="badge  ml-0 mr-0" :class="getStatusClass(case_.status)">{{ getStatus(case_.status) }}</span></td>
           <td>
             <button type="button" class="btn btn-sm btn-default " title="Like" data-toggle="tooltip" data-placement="top"><i class="icon-like"></i></button>
             <button type="button" class="btn btn-sm btn-default" title="Dislike" data-toggle="tooltip" data-placement="top"><i class="icon-dislike"></i></button>
@@ -53,42 +53,33 @@
 
 <script>
 
-  import Request from "../components/Request";
   export default {
-    components: {Request},
-
     async asyncData ({ $axios ,store}) {
-      console.log("salm")
        var author =store.state.authUser.id
        var url = 'http://localhost:8080/api/v1/profile/listSubmittedCase/'+author;
-       console.log(url)
-       console.log(author)
       let data = await $axios.$get(url)
-      console.log(data)
-      console.log("test")
       return {cases:data}
 
     },    methods: {
       getStatus(status) {
-        console.log("status")
-        console.log(status)
         if (status == undefined) {
           return 'نامشخص'
         }
         const statuses = {
           'open': 'ایجاد شده',
-          'close': 'تمام شده',
+          'done': 'تمام شده',
           'pending': 'در حال بررسی'
         }
         return statuses[status]
       },
       getStatusClass(status) {
+        console.log(status)
         if (status == undefined) {
           return 'badge-danger'
         }
         const statuses = {
           'open': 'badge-info',
-          'close': 'badge-success',
+          'done': 'badge-success',
           'pending': 'badge-warning'
         }
         return statuses[status]

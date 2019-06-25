@@ -9,16 +9,16 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-user"></i></span>
               </div>
-              <input v-model="author.id"  type="text" class="form-control" placeholder="ایمیل فرستنده" aria-label="Username"
+              <input  type="text" class="form-control" :placeholder="refCase.author.email" aria-label="Username"
                      aria-describedby="basic-addon1" readonly>
             </div>
             <div class="form-group">
               <label>عنوان</label>
-              <label class="form-control" rows="5" cols="30" required>اضافه شدن درس های پروژه دار</label>
+              <label class="form-control" rows="5" cols="30" required>{{refCase.title}}</label>
             </div>
             <div class="form-group">
               <label>شرح کامل</label>
-              <label class="form-control" rows="5" cols="30" required>با سلام لطفا با توجه به نیاز به زمان برای انجام درس های پروژه دار به این تغییر توجه فرمایید.</label>
+              <label class="form-control" rows="5" cols="30" required>{{refCase.content}}</label>
             </div>
           </div>
         </div>
@@ -32,10 +32,10 @@
               <label>ارجاع های قبلی&nbsp;<i id = "show" class="fa fa-caret-square-o-down"></i></label>
               <br>
             </div>
-            <div id="history" style="display: none">
-              <div class="form-group">
-                <label>حسن غفوری</label>
-                <label class="form-control" rows="5" cols="30" required>با توجه به تکرر درخواست درخواست به دکتر شمس فرد ارجاع داده شد</label>
+            <div id="history" style="display: none" >
+              <div v-for="referal in referrals" v-bind:key="referal.id" class="form-group">
+                <label>{{referal.author.email}}</label>
+                <label class="form-control" rows="5" cols="30" required>{{referal.content}}</label>
               </div>
             </div>
           </div>
@@ -43,44 +43,40 @@
         </div>
       </div>
 
+      <form @submit.prevent="submitRef">
       <div class="col-md-12">
         <div class="card">
           <div class="body">
             <div class="row clearfix">
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
-                  <textarea  v-model="case_content" placeholder="متن پاسخ..." class="form-control content-area">
+                  <textarea  v-model="req.content" placeholder="متن پاسخ..." class="form-control content-area">
                   </textarea>
                 </div>
               </div>
             </div>
-
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input  type="text" class="form-control" placeholder="ایمیل گیرنده" aria-label="Username"
+                      aria-describedby="basic-addon1" v-model="req.reciever.email">
+            </div>
             <div class="form-group">
               <label for="input01">وضعیت</label>
-              <select class="form-control round" id ="input01">
-                <option value="employee">انتخاب کنید...</option>
-                <option value="employee">باز</option>
-                <option value="student">بسته</option>
-                <option value="professor">در حال بررسی</option>
-                <option value="manager">تعویق</option>
+              <select v-model="req.status" class="form-control round" id ="input01">
+                <option value="open">باز</option>
+                <option value="done">بسته</option>
+                <option value="pending">در حال بررسی</option>
               </select>
-              <div class="form-group">
-                <br>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">مقطع</label>
-                  </div>
-                  <input type="text" class="form-control" id="inputGroupSelect01">
-                </div>
-              </div>
             </div>
-            <button type="button" class="btn btn-primary btn-round">ثبت</button>
+            <button type="submit" class="btn btn-primary btn-round">ثبت</button>
 
           </div>
         </div>
       </div>
 
-
+      </form>
     </section>
   </div>
 </template>
@@ -108,42 +104,15 @@
         ]
       }
     },
-    data(){
-      return{
-        // author : this.$store.state.authUser.email,
-        author : {id:this.$store.state.authUser.email },
-        receiver:'',
-        submitDate:'',
-        subject:'',
-        title:'',
-        case_content:'',
-        error:null
-      }
+    async asyncData({$axios, route, params, store}) {
+      let page = await $axios.$get(`http://localhost:8080/api/v1/case/refpage/${route.query.id}`)
+      console.log(page)
+      return {...page, req: {author: {content: '', id: store.state.authUser.id},reciever: {}, status: '', parent: {id: route.query.id}}}
     },
 
     methods:{
-      async submitCase(){
-        try {
-          await this.$store.dispatch('submitCase', {
-            author: {id:this.$store.state.authUser.email },
-            receiver: this.receiver,
-            submitDate: this.submitDate,
-            subject: this.subject,
-            title: this.title,
-            text: this.case_content
-          })
-          this.receiver= '',
-            this.submitDate= '',
-            this.subject='',
-            this.title='',
-            this.text= '',
-            this.case_content =''
-          this.error = null
-          this.$router.push('/')
-        }
-        catch (e) {
-
-        }
+      async submitRef() {
+        await this.$axios.$post("http://localhost:8080/api/v1/case/addreferral", this.req)
       }
     }
   }

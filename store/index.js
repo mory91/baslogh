@@ -68,8 +68,6 @@ export const actions = {
   async submitCase({commit}, {author, receiver, submitDate, subject, title, text}){
     try{
       const { data } = await axios.post('http://localhost:8080/api/v1/case/submit', { author, receiver, submitDate, subject, title, text })
-      console.log(data)
-
       // commit('SET_CASE', data)
     } catch (error) {
       if (error.response && error.response.status === 401) {
@@ -79,13 +77,9 @@ export const actions = {
     }
   },
 
-  async editProfile({commit}, {user}){
+  async editProfile({commit}, user){
     try{
-      console.log("edit");
-      console.log(user)
-      const { data } = await axios.post('http://localhost:8080/api/v1/profile/editProfile/'+user.id, { user})
-      console.log(data)
-
+      const { data } = await axios.post('http://localhost:8080/api/v1/profile/editProfile/'+user.id, user)
       // commit('SET_CASE', data)
     } catch (error) {
       if (error.response && error.response.status === 401) {

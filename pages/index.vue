@@ -5,19 +5,6 @@
     <div class="col-lg-12 col-md-12">
       <div class="card">
         <div class="header">
-          <h2 >لیست موارد ثبت شده در یک سال اخیر</h2>
-          <ul class="header-dropdown dropdown">
-
-            <li><a href="javascript:void(0);" class="full-screen"><i class="icon-frame"></i></a></li>
-            <li class="dropdown">
-              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-              <ul class="dropdown-menu">
-                <li><a href="javascript:void(0);">Action</a></li>
-                <li><a href="javascript:void(0);">Another Action</a></li>
-                <li><a href="javascript:void(0);">Something else</a></li>
-              </ul>
-            </li>
-          </ul>
         </div>
         <div class="body">
           <div id="bar-chart" class="ct-chart"></div>
@@ -36,9 +23,7 @@
 </template>
 
 <script>
-import Request from "../components/Request";
-export default {
-  components: {Request}
+  export default {
 }
 </script>
 
