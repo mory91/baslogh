@@ -47,7 +47,7 @@
                 <div class="avtar-pic w35 bg-red" data-toggle="tooltip" data-placement="top" title="Avatar Name"><span>SS</span></div>
                 <div class="mr-3">
                   <a href="page-invoices-detail.html" title="">شمس فرد</a>
-                  <p class="mb-0">ghafouri@sbu.ac.ir</p>
+                  <p class="mb-0">{{sag}}</p>
                 </div>
               </div>
             </td>
@@ -66,7 +66,13 @@
 
 <script>
     export default {
-        name: "Request"
+      name: "Request",
+      data() {
+        return {sag: ''}
+      },
+      mounted() {
+          this.sag = "SAGAGSUDASGDKLASGBDHKLASBDHLASBD"
+      }
     }
 </script>
 

@@ -23,7 +23,6 @@
       return {
         script: [
           {src: "/vendor/ckeditor/ckeditor.js", body: true},
-          { src: "/bundles/chartist.bundle.js", body: true },
           { src: "/bundles/libscripts.bundle.js", body: true},
           { src: "/bundles/vendorscripts.bundle.js", body: true },
           { src: "/bundles/mainscripts.bundle.js", body: true }

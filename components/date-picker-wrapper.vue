@@ -1,41 +1,25 @@
 <template>
     <no-ssr>
-      <date-picker lang='en' type="datetime"></date-picker>
+      <date-picker lang='en' v-model="time1" @change="update"></date-picker>
     </no-ssr>
 </template>
 
 <script>
   export default {
     name:"date-picker-wrapper",
+    props: ['filter_name'],
     data() {
       return {
-        time1: '',
-        time2: '',
-        time3: '',
-        // custom lang
-        lang: {
-          days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-          months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          pickers: ['next 7 days', 'next 30 days', 'previous 7 days', 'previous 30 days'],
-          placeholder: {
-            date: 'Select Date',
-            dateRange: 'Select Date Range'
-          }
-        },
-        // custom range shortcuts
-        shortcuts: [
-          {
-            text: 'Today',
-            onClick: () => {
-              this.time3 = [ new Date(), new Date() ]
-            }
-          }
-        ],
-        timePickerOptions:{
-          start: '00:00',
-          step: '00:30',
-          end: '23:30'
-        }
+        time1: ''
+      }
+    },
+    methods: {
+      async update() {
+        let filter_name = this.filter_name
+        let t = this.time1
+        let data = {}
+        data[filter_name] = t
+        await this.$store.dispatch('filter_cases', data)
       }
     }
   }
