@@ -19,7 +19,6 @@ export const actions = {
       commit('SET_USER', req.session.authUser)
     }
   },
-
   async login({ commit }, { email, password }) {
 
     try {
@@ -55,13 +54,23 @@ export const actions = {
 
   async submitCase({commit}, {author, receiver, submitDate, subject, title, text}){
     try{
-      console.log(author)
-      console.log(receiver)
-      console.log(submitDate)
-      console.log(subject)
-      console.log(title)
-      console.log(text)
       const { data } = await axios.post('http://localhost:8080/api/v1/case/submit', { author, receiver, submitDate, subject, title, text })
+      console.log(data)
+
+      // commit('SET_CASE', data)
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        throw new Error('Bad credentials')
+      }
+      throw error
+    }
+  },
+
+  async editProfile({commit}, {user}){
+    try{
+      console.log("edit");
+      console.log(user)
+      const { data } = await axios.post('http://localhost:8080/api/v1/profile/editProfile/'+user.id, { user})
       console.log(data)
 
       // commit('SET_CASE', data)

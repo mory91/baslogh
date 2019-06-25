@@ -7,9 +7,9 @@
           <img src="../assets/images/user.png" height="90%" class="rounded" style="margin-top: 5%" alt="">
         </div>
         <div class="details" style="margin-top: 20px">
-          <h5 class="mb-0">مرتضی حسینی</h5>
-          <span class="text-light">دانشجو</span>
-          <p class="mb-0"><span> موارد ثبت شده:<strong>5</strong></span></p>
+          <h5 class="mb-0">{{user.email}}</h5>
+          <span class="text-light">{{getRole(user.roles[0])}}</span>
+          <p class="mb-0"><span> موارد ثبت شده:<strong>{{num}}</strong></span></p>
           <div style="text-align: left">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -33,14 +33,14 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="نام" aria-label="firstname"
+            <input type="text" class="form-control" placeholder="نام" v-model="user.firstname" aria-label="firstname"
                    aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder=" نام خانوادگی" aria-label="lastname"
+            <input type="text" class="form-control" placeholder="نام خانوادگی" v-model="user.lastname" aria-label="lastname"
                    aria-describedby="basic-addon1">
           </div>
 
@@ -50,26 +50,26 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-at"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="ایمیل" aria-label="Username"
+            <input type="text" class="form-control" placeholder="ایمیل" v-model="user.email" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-key"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="پسوورد" aria-label="Username"
+            <input type="text" class="form-control" placeholder="پسوورد" v-model="user.password" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-key"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="تکرار پسوورد" aria-label="Username"
+            <input type="text" class="form-control" placeholder="تکرار پسوورد" v-model="user.password" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
 
 
-          <button type="button" class="btn btn-primary btn-round">ذخیره</button>
+          <button type="submit" class="btn btn-primary btn-round">ذخیره</button>
         </div>
         </div>
     </div>
@@ -78,5 +78,52 @@
 </template>
 <script>
   export default {
-  }
+    async asyncData ({ $axios ,store}) {
+      console.log("salm")
+      var author =store.state.authUser.id
+      var url = 'http://localhost:8080/api/v1/profile/getInfo/'+author;
+      var url2 = 'http://localhost:8080/api/v1/profile/numOfSubmittedCase/'+author;
+      console.log(url)
+      console.log(author)
+      let data = await $axios.$get(url)
+      let data2 = await $axios.$get(url2)
+      console.log(data)
+      console.log("test")
+      return {user:data, num:data2}
+
+    }, methods: {
+      getRole(role) {
+        if (role == undefined) {
+          return 'نامشخص'
+        }
+        const roles = {
+          'ROLE_CLERK': 'کارمند',
+          'ROLE_ADMIN': 'مدیر',
+          'ROLE_STUDENT': 'دانشجو'
+        }
+        return roles[role]
+      },
+      data(){
+        return{
+          user:'',
+          error:null
+        }
+      },
+
+      methods:{
+        async submitCase(){
+          try {
+            await this.$store.dispatch('editProfile', {
+             user : this.user
+            })
+            this.user= '',
+            this.error = null
+            this.$router.push('/')
+          }
+          catch (e) {
+
+          }
+        }}
+
+    }}
 </script>

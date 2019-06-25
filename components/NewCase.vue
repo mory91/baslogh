@@ -99,6 +99,8 @@
 
     methods:{
       async submitCase(){
+        console.log("test")
+        console.log(user)
         try {
           await this.$store.dispatch('submitCase', {
             author: {id:this.$store.state.authUser.email },

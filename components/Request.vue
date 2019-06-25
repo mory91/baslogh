@@ -44,12 +44,14 @@
 
 <script>
   import axios from 'axios'
-
-  export default {
-    async asyncData () {
-      const { data } = await axios.get('http://localhost:8080/api/v1/profile/listSubmittedCase')
-      return { cases: data }
-    },
+    export default {
+      // name: "Request",
+      // data() {
+      //   return {sag: ''}
+      // },
+      // mounted() {
+      //   cases =  $axios.$get('http://localhost:8080/api/v1/profile/listSubmittedCase')
+      // }
   }
 
 </script>
