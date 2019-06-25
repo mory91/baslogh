@@ -22,9 +22,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="case_ in cases" v-bind:key="case_.id">
+        <tr v-for="(index, case_) in cases" v-bind:key="case_.id">
           <td>
-            <span>01</span>
+            <n-link :to="{path: 'caseInfo', query: {id: case_.id}}">{{index}}</n-link>>
           </td>
           <td>
             <div class="d-flex align-items-center">
