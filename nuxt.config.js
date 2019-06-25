@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
-    { src: '~/plugins/datepicker', ssr: false}
+    { src: '~/plugins/datepicker', ssr: false},
+    { src: '~/plugins/vue-chartjs-plugin.js', ssr: false },
   ],
   /*
   ** Headers of the page

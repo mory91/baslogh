@@ -45,15 +45,8 @@
 <script>
   import axios from 'axios'
     export default {
-      // name: "Request",
-      // data() {
-      //   return {sag: ''}
-      // },
-      // mounted() {
-      //   cases =  $axios.$get('http://localhost:8080/api/v1/profile/listSubmittedCase')
-      // }
-  }
-
+        name: "Request"
+    }
 </script>
 
 <style scoped>

@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 export const state = () => ({
-  authUser: null
+  authUser: null,
+  chartData: null
 })
 
 export const mutations = {
@@ -9,6 +10,16 @@ export const mutations = {
     console.log(user)
     state.authUser = user
     state.loggedIn = true
+  },
+  SET_FILTER: function (state, filters) {
+    if (state.filters == undefined) {
+      state.filters = {}
+    }
+    state.filters = {...state.filters, ...filters}
+    console.log(state.filters)
+  },
+  SET_CHART_DATA: function (state, chartData) {
+    state.chartDate = chartData
   }
 }
 
@@ -51,7 +62,9 @@ export const actions = {
     await axios.post('http://localhost:8000/api/logout')
     commit('SET_USER', null)
   },
-
+  async setChartData ({ commit }, data) {
+    commit('SET_CHART_DATA', data)
+  },
   async submitCase({commit}, {author, receiver, submitDate, subject, title, text}){
     try{
       const { data } = await axios.post('http://localhost:8080/api/v1/case/submit', { author, receiver, submitDate, subject, title, text })
@@ -81,6 +94,9 @@ export const actions = {
       throw error
     }
 
+  },
+  async filter_cases ({commit}, data) {
+    commit('SET_FILTER', data)
   }
 
 }
