@@ -38,19 +38,7 @@
 <script>
 import Request from "../components/Request";
 export default {
-  components: {Request},
-  head () {
-    return {
-      script: [
-        { src: "/bundles/chartist.bundle.js", body: true },
-        { src: "/bundles/chartjs.js", body: true }
-      ],
-      link: [
-        { rel: 'stylesheet', href: 'vendor/chartist/css/chartist.min.css' },
-        { rel: 'stylesheet', href: 'vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css' },
-      ]
-    }
-  }
+  components: {Request}
 }
 </script>
 
