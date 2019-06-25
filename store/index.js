@@ -7,7 +7,8 @@ export const state = () => ({
 
 export const mutations = {
   SET_USER: function (state, user) {
-    console.log(user)
+    localStorage.setItem("user", JSON.stringify({email: user.email, token: user.token, id: user.id}))
+    this.$axios.setToken(user.token, 'Bearer')
     state.authUser = user
     state.loggedIn = true
   },
@@ -24,10 +25,28 @@ export const mutations = {
 }
 
 export const actions = {
-  // nuxtServerInit is called by Nuxt.js before server-rendering every page
   nuxtServerInit({ commit }, { req }) {
+    let user = null;
+    if (process.browser) {
+       user = JSON.parse(localStorage.getItem("user"))
+    }
     if (req.session && req.session.authUser) {
       commit('SET_USER', req.session.authUser)
+    } else if(user) {
+      commit('SET_USER', user)
+    }
+  },
+  nuxtClientInit({ commit }, { req }) {
+    let user = null;
+    if (process.browser) {
+      user = JSON.parse(localStorage.getItem("user"))
+      console.log("xxxxxxxxxxxxxxxxx")
+      console.log(user)
+    }
+    if (req && req.session && req.session.authUser) {
+      commit('SET_USER', req.session.authUser)
+    } else if(user) {
+      commit('SET_USER', user)
     }
   },
   async login({ commit }, { email, password }) {
